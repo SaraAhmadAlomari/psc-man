@@ -1,0 +1,34 @@
+{
+    # Highscore file path
+    "highscore_filename": "highscores.json",
+
+    # Default dimensions
+    "width": 15,
+    "height": 15,
+
+    # Starting lives
+    "lives": 3,
+
+    # Fixed seed for level 1; subsequent levels use a random seed
+    "seed": 42,
+
+    # Scoring
+    "points_per_pacgum":       10,
+    "points_per_super_pacgum": 50,
+    "points_per_ghost":        200,
+
+    # 10 levels — same size (15x15) for levels 1-9, slightly bigger (17x17) for level 10
+    # Maze is regenerated randomly each level for variety; time limit shrinks for difficulty
+    "levels": [
+        { "width": 15, "height": 15, "level_max_time": 90 },
+        { "width": 15, "height": 15, "level_max_time": 85 },
+        { "width": 15, "height": 15, "level_max_time": 80 },
+        { "width": 15, "height": 15, "level_max_time": 75 },
+        { "width": 15, "height": 15, "level_max_time": 70 },
+        { "width": 15, "height": 15, "level_max_time": 65 },
+        { "width": 15, "height": 15, "level_max_time": 60 },
+        { "width": 15, "height": 15, "level_max_time": 55 },
+        { "width": 15, "height": 15, "level_max_time": 50 },
+        { "width": 17, "height": 17, "level_max_time": 45 }
+    ]
+}
