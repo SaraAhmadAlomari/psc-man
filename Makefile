@@ -1,6 +1,6 @@
 # Variables
 PYTHON      = python3
-MAIN        = main.py
+MAIN        = pac-man.py config.json
 
 # Default Rule
 all: install lint run
