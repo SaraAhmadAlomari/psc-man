@@ -1,17 +1,26 @@
 import sys
+import os
 from src.config_parser import load_config
 from src.maze_adapter import MazeAdapter
 from src.game_engine import GameEngine
 
 
+def get_config_path() -> str:
+    if getattr(sys, 'frozen', False):
+        base_path = getattr(sys, "_MEIPASS", os.path.dirname(__file__))
+        return os.path.join(base_path, "config.json")
+    return "config.json"
+
+
 def main() -> None:
     """Run the Pac-Man maze generator."""
 
-    if len(sys.argv) != 2:
-        print("Usage: python pac-man.py config.json")
-        return
+    if len(sys.argv) == 2:
+        config_path = sys.argv[1]
+    else:
+        config_path = get_config_path()
 
-    config = load_config(sys.argv[1])
+    config = load_config(config_path)
 
     # Use first-level config (or top-level fallback) for the initial maze
     levels = config.get("levels", [])

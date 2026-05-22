@@ -1,5 +1,5 @@
 # Variables
-PYTHON      = python3
+PYTHON      = python
 MAIN        = pac-man.py config.json
 
 # Default Rule
@@ -34,4 +34,6 @@ lint-strict:
 	flake8 .
 	mypy . --strict
 
-.PHONY: all install run debug clean lint lint-strict
+package:
+	pyinstaller --onefile --windowed pac-man.py --add-data "config.json;."
+.PHONY: all install run debug clean lint lint-strict package
